@@ -1,10 +1,5 @@
-# AngularNodeFileUpload
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
-
-## Development server
-
 # **                                              **Angular 13 + MongoDB Example with Node.js Express ****
+                        This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
 Angular 13 node js mongodb crud example. In this tutorial, we will learn how to create ( MEAN Stack) crud apps using angular 13 + node js express rest API and MongoDB.
 
@@ -51,7 +46,7 @@ import { HttpClientModule } from '@angular/common/http';
 export class AppModule { }
 ....
 
-Step 4 – Create CRUD Routes
+## Step 4 – Create CRUD Routes
 In this step, create routes; with the help of Angular routes. So, you will make the consensus with components to enable the navigation in the CRUD application so add the below code in the app-routing.module.ts file.
 ....
 import { NgModule } from '@angular/core';
@@ -77,7 +72,7 @@ export class AppRoutingModule { }
 ....
 
  
-Step 5 – Build RESTful API using Node + Express js + MongoDB
+## Step 5 – Build RESTful API using Node + Express js + MongoDB
 In this step, you will learn how to create RESTful API with Node and Express.js, not just that to handle the data we will learn to use mongoDB.
 So, execute the below command to invoke the REST API development with Node and Express.js:
 
@@ -276,7 +271,7 @@ GET			/read-book/id
 PUT			/update-book/id
 DELETE		/delete-book/id
 
-Step 6 – Create Angular Service for REST API Consumption
+## Step 6 – Create Angular Service for REST API Consumption
 In this step, visit app/service directory in Angular project and create Book.ts class within.
 Then, add the below code in app/service/Book.ts file:
 ....
@@ -373,7 +368,7 @@ export class CrudService {
 }
 ....
     
-    Step 7 – Add code In app.component.html
+## Step 7 – Add code In app.component.html
 In this step, create html and for crud app in angular . So, visit src/app/app.component.html and update the following code into it:
 ....
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -394,7 +389,7 @@ In this step, create html and for crud app in angular . So, visit src/app/app.co
 <router-outlet></router-outlet>
 ....
     
-Step 8 – Create Operation
+## Step 8 – Create Operation
 After that, Add the code in add-book.component.ts file:
 ....
     import { Component, OnInit, NgZone } from '@angular/core';
@@ -623,6 +618,6 @@ export class BookDetailComponent implements OnInit {
 </div>
 ....    
     
-Conclusion
+## Conclusion
 Angular 13 CRUD application using Node.js, Express.js, and MongoDB. In this tutorial, we have learned how to create crud app in angular 13 using nodejs and mongo db with built REST API.
 
