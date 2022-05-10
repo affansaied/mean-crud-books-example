@@ -22,16 +22,16 @@ Then execute the following command on terminal to install angular material:
 
 ## Step 2 – Create Components in Angular
 In this step, you need to execute the following commands on terminal to generate components in our angular application. So, open y cour terminal and execute the following command:
-`ng g c components/add-book`
-`ng g c components/book-detail`
-`ng g c components/books-list`
+`ng g c components/add-book`<br>
+`ng g c components/book-detail`<br>
+`ng g c components/books-list`<br>
 
 # Step 3 – Import Modules in app.module.ts
-In this step, visit src/app directory and open app.module.ts file. Then add the following code into it:
+In this step, visit src/app directory and open app.module.ts file. Then add the following code into it:<br>
 `....
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';<br>
 import { HttpClientModule } from '@angular/common/http';
- 
+ <br>
 @NgModule({
   declarations: [],
   imports: [
@@ -42,45 +42,45 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [],
   bootstrap: []
 })
- 
-export class AppModule { }
+ <br>
+export class AppModule { }<br>
 ....`
 
 ## Step 4 – Create CRUD Routes
-In this step, create routes; with the help of Angular routes. So, you will make the consensus with components to enable the navigation in the CRUD application so add the below code in the app-routing.module.ts file.
+In this step, create routes; with the help of Angular routes. So, you will make the consensus with components to enable the navigation in the CRUD application so add the below code in the app-routing.module.ts file.<br>
 `....
-import { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';<br>
 import { Routes, RouterModule } from '@angular/router';
- 
-import { BooksListComponent } from './components/books-list/books-list.component';
-import { AddBookComponent } from './components/add-book/add-book.component';
-import { BookDetailComponent } from './components/book-detail/book-detail.component';
- 
+ <br>
+import { BooksListComponent } from './components/books-list/books-list.component';<br>
+import { AddBookComponent } from './components/add-book/add-book.component';<br>
+import { BookDetailComponent } from './components/book-detail/book-detail.component';<br>
+ <br>
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'add-book' },
   { path: 'books-list', component: BooksListComponent },
   { path: 'add-book', component: AddBookComponent },
   { path: 'edit-book/:id', component: BookDetailComponent }
 ];
- 
+ <br>
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
- 
-export class AppRoutingModule { }
+ <br>
+export class AppRoutingModule { }<br>
 ....`
 
  
 ## Step 5 – Build RESTful API using Node + Express js + MongoDB
 In this step, you will learn how to create RESTful API with Node and Express.js, not just that to handle the data we will learn to use mongoDB.
 So, execute the below command to invoke the REST API development with Node and Express.js:
-
-mkdir node-rest-api && cd node-rest-api
-
+<br>
+`mkdir node-rest-api && cd node-rest-api`
+<br>
 Then execute:
-npm init -y
-
+`npm init -y`
+<br>
 After that, execute the following commands to install imperative npm packages which will help us to create REST APIs for our Angular CRUD system:
 npm install express cors body-parser mongoose
 npm install nodemon --save-dev
