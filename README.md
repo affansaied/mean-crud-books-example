@@ -122,7 +122,8 @@ let Book = new Schema({
 module.exports = mongoose.model('Book', Book)
 ```
 
-Then, You need to define the REST API routes using Express js in a node project. Create node-backend/routes folder, also create book.routes.js file, Add the below code into it:
+Then, You need to define the REST API routes using Express js in a node project.<br>
+Create node-backend/routes folder, also create book.routes.js file, Add the below code into it:
 <br>
 <br>
 <br>
@@ -195,8 +196,10 @@ bookRoute.route('/delete-book/:id').delete((req, res, next) => {
   })
 })
  
-module.exports = bookRoute;```
+module.exports = bookRoute;
+```
 
+<br>
 <br>
 Now, you need to sum up all the code and conjugate at one place so that you can run our backend and propel the CRUD app development forward.
 Create and add the below code in index.js file:<br>
@@ -273,16 +276,20 @@ app.use(function (err, req, res, next) {
 <br>
 <br>
 Next, execute the command while staying in the server folder (node-backend):<br>
-` nodemon `
+`nodemon`
 
+<br>
+<br>
 Here is your bash URL for REST API built with Node and Express http://localhost:8000/api<br>
 The endpoints we created and you can use these to handle the CRUD operations with Angular application:<br>
-Methods		Endpoints
-GET			/api
-POST			/add-book
-GET			/read-book/id
-PUT			/update-book/id
-DELETE		/delete-book/id
+<br>
+Methods		Endpoints<br>
+GET			/api<br>
+POST			/add-book<br>
+GET			/read-book/id<br>
+PUT			/update-book/id<br>
+DELETE		/delete-book/id<br>
+<br>
 
 ## Step 6 – Create Angular Service for REST API Consumption
 In this step, visit app/service directory in Angular project and create Book.ts class within.
