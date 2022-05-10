@@ -21,14 +21,14 @@ Then execute the following command on terminal to install angular material:
 `ng add @angular/material`
 
 ## Step 2 – Create Components in Angular
-In this step, you need to execute the following commands on terminal to generate components in our angular application. So, open y cour terminal and execute the following command:
+In this step, you need to execute the following commands on terminal to generate components in our angular application. So, open y cour terminal and execute the following command:<br>
 `ng g c components/add-book`<br>
 `ng g c components/book-detail`<br>
 `ng g c components/books-list`<br>
 
 # Step 3 – Import Modules in app.module.ts
 In this step, visit src/app directory and open app.module.ts file. Then add the following code into it:<br>
-`....
+```typescript
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';<br>
 import { HttpClientModule } from '@angular/common/http';
  <br>
@@ -44,7 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
 })
  <br>
 export class AppModule { }<br>
-....`
+```
 
 ## Step 4 – Create CRUD Routes
 In this step, create routes; with the help of Angular routes. So, you will make the consensus with components to enable the navigation in the CRUD application so add the below code in the app-routing.module.ts file.<br>
