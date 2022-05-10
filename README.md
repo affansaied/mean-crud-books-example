@@ -14,10 +14,10 @@ Step 7 – Add code In app.component.html<br>
 Step 8 – Create Operation<br>
 
 ## Step 1 – Create New Angular App
-First of all, open your terminal and execute the following command on it to install angular app:
+First of all, open your terminal and execute the following command on it to install angular app:<br>
 'ng new my-new-app'
 
-Then execute the following command on terminal to install angular material:
+Then execute the following command on terminal to install angular material:<br>
 `ng add @angular/material`
 
 ## Step 2 – Create Components in Angular
@@ -25,11 +25,13 @@ In this step, you need to execute the following commands on terminal to generate
 `ng g c components/add-book`<br>
 `ng g c components/book-detail`<br>
 `ng g c components/books-list`<br>
+<br>
 
 # Step 3 – Import Modules in app.module.ts
 In this step, visit src/app directory and open app.module.ts file. Then add the following code into it:<br>
+
 ```typescript
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';<br>
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
  <br>
 @NgModule({
@@ -42,34 +44,34 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [],
   bootstrap: []
 })
- <br>
-export class AppModule { }<br>
+ 
+export class AppModule { }
 ```
 
 ## Step 4 – Create CRUD Routes
 In this step, create routes; with the help of Angular routes. So, you will make the consensus with components to enable the navigation in the CRUD application so add the below code in the app-routing.module.ts file.<br>
 
 ```typescript
-import { NgModule } from '@angular/core';<br>
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
- <br>
-import { BooksListComponent } from './components/books-list/books-list.component';<br>
-import { AddBookComponent } from './components/add-book/add-book.component';<br>
-import { BookDetailComponent } from './components/book-detail/book-detail.component';<br>
- <br>
+
+import { BooksListComponent } from './components/books-list/books-list.component';
+import { AddBookComponent } from './components/add-book/add-book.component';
+import { BookDetailComponent } from './components/book-detail/book-detail.component';
+
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'add-book' },
   { path: 'books-list', component: BooksListComponent },
   { path: 'add-book', component: AddBookComponent },
   { path: 'edit-book/:id', component: BookDetailComponent }
 ];
- <br>
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
- <br>
-export class AppRoutingModule { }<br>
+ 
+export class AppRoutingModule { }
 ```
 
  
@@ -79,19 +81,19 @@ So, execute the below command to invoke the REST API development with Node and E
 <br>
 `mkdir node-rest-api && cd node-rest-api`
 <br>
-Then execute:
+Then execute:<br>
 `npm init -y`
 <br>
 
-After that, execute the following commands to install imperative npm packages which will help us to create REST APIs for our Angular CRUD system:
-`npm install express cors body-parser mongoose`
-`npm install nodemon --save-dev`
+After that, execute the following commands to install imperative npm packages which will help us to create REST APIs for our Angular CRUD system:<br>
+`npm install express cors body-parser mongoose`<br>
+`npm install nodemon --save-dev`<br>
 
-To store the data flawlessly, you need a reliable database of what else could be a better choice than mongoDB. So, create a node-backend/database directory, also generate the db.js file where all the logic will be piled up for invoking the mongoDB connection.
-`mkdir database && cd database && copy con db.js`
+To store the data flawlessly, you need a reliable database of what else could be a better choice than mongoDB. So, create a node-backend/database directory, also generate the db.js file where all the logic will be piled up for invoking the mongoDB connection.<br>
+`mkdir database && cd database && copy con db.js`<br>
 
-Add the below code in node-backend/database/db.js file.
-```typescript
+Add the below code in node-backend/database/db.js file.<br>
+```javascript
 module.exports = {
     db: 'mongodb://localhost:27017/db'
 };
@@ -122,7 +124,7 @@ module.exports = mongoose.model('Book', Book)
 
 Then, You need to define the REST API routes using Express js in a node project. Create node-backend/routes folder, also create book.routes.js file, Add the below code into it:
 
-```typescript
+```javascript
 const express = require('express');
 const app = express();
  
@@ -193,11 +195,11 @@ bookRoute.route('/delete-book/:id').delete((req, res, next) => {
  
 module.exports = bookRoute;
 ```
-
+<br>
 Now, you need to sum up all the code and conjugate at one place so that you can run our backend and propel the CRUD app development forward.
-Create and add the below code in index.js file:
+Create and add the below code in index.js file:<br>
 
-```typescript
+```javascript
   let express = require('express'),
   path = require('path'),
   mongoose = require('mongoose'),
@@ -262,13 +264,14 @@ app.use(function (err, req, res, next) {
   res.status(err.statusCode).send(err.message);
 });
 ```
+<br>
+<br>
+<br>
+Next, execute the command while staying in the server folder (node-backend):<br>
+`nodemon`
 
-
-Next, execute the command while staying in the server folder (node-backend):
-nodemon
-
-Here is your bash URL for REST API built with Node and Express http://localhost:8000/api
-The endpoints we created and you can use these to handle the CRUD operations with Angular application:
+Here is your bash URL for REST API built with Node and Express http://localhost:8000/api<br>
+The endpoints we created and you can use these to handle the CRUD operations with Angular application:<br>
 Methods		Endpoints
 GET			/api
 POST			/add-book
@@ -289,11 +292,12 @@ export class Book {
 }
 ```
 
-Then, execute the command to create crud service file:
+Then, execute the command to create crud service file:<br>
 `ng g s service/crud`
 
+<br>
 Then, add the below code in app/service/crud.service.ts file:
-
+<br>
 ```typescript
 import { Injectable } from '@angular/core';
 import { Book } from './Book';
@@ -374,11 +378,12 @@ export class CrudService {
  
 }
 ```
+<br>
+<br>
 
-    
 ## Step 7 – Add code In app.component.html
-In this step, create html and for crud app in angular . So, visit src/app/app.component.html and update the following code into it:
-
+In this step, create html and for crud app in angular . So, visit src/app/app.component.html and update the following code into it:<br>
+<br>
 ```html
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand">Angular 13 CRUD Operations Demo</a>
@@ -397,10 +402,11 @@ In this step, create html and for crud app in angular . So, visit src/app/app.co
  
 <router-outlet></router-outlet>
 ```
-    
+<br>
+
 ## Step 8 – Create Operation
 After that, Add the code in add-book.component.ts file:
-
+<br>
 ```typescript
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
@@ -444,11 +450,12 @@ export class AddBookComponent implements OnInit {
  
 }
 ```
-
-    
+<br>
+<br>
+<br>
 Then, Add the code in add-book.component.html file:
-
-```typescript
+<br>
+```html
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
         <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
@@ -474,9 +481,10 @@ Then, Add the code in add-book.component.html file:
     </div>
   </div>
 ```
+<br>
     
-Add the code in books-list.component.ts file:
-
+Add the code in books-list.component.ts file:<br>
+<br>
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../../service/crud.service';
@@ -510,8 +518,11 @@ export class BooksListComponent implements OnInit {
   } 
 }
 ```
-    
+<br>
+<br>
+
 Add the code in books-list.component.html file:
+<br>
 
 ```html
  <div class="container">
@@ -545,9 +556,11 @@ Add the code in books-list.component.html file:
   </div>
 </div>
 ```
-    
-Add the code in book-detail.component.ts file:
+<br>
+<br>
 
+Add the code in book-detail.component.ts file:<br>
+<br>
 ```typescript
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -603,11 +616,12 @@ export class BookDetailComponent implements OnInit {
  
 }
 ```
+<br>
+<br>
 
-    
- Add the code in book-detail.component.html file:
- 
-```typescript
+ Add the code in book-detail.component.html file:<br>
+ <br>
+```html
   <div class="row justify-content-center mt-5">
   <div class="col-md-4">
     <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
@@ -633,7 +647,11 @@ export class BookDetailComponent implements OnInit {
   </div>
 </div>
 ```
+<br>
+<br>
+<br>
     
 ## Conclusion
 Angular 13 CRUD application using Node.js, Express.js, and MongoDB. In this tutorial, we have learned how to create crud app in angular 13 using nodejs and mongo db with built REST API.
+<br><br><br>
 
