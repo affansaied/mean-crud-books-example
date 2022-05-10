@@ -381,7 +381,8 @@ export class CrudService {
     return throwError(errorMessage);
   }
  
-} ```
+} 
+```
 
 <br>
 <br>
@@ -630,6 +631,7 @@ export class BookDetailComponent implements OnInit {
 
  Add the code in book-detail.component.html file:<br>
  <br>
+ 
 ```html
 <div class="row justify-content-center mt-5">
   <div class="col-md-4">
