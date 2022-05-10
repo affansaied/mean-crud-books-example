@@ -4,14 +4,14 @@
 Angular 13 node js mongodb crud example. In this tutorial, we will learn how to create ( MEAN Stack) crud apps using angular 13 + node js express rest API and MongoDB.
 
 ## Use the following steps to create angular 13 + node js mongodb crud application; as follows:
-Step 1 – Create New Angular App
-Step 2 – Create Components in Angular
-Step 3 – Import Modules in app.module.ts
-Step 4 – Create CRUD Routes
-Step 5 – Build RESTful API using Node + Express js + MongoDB
-Step 6 – Create Angular Service for REST API Consumption
-Step 7 – Add code In app.component.html
-Step 8 – Create Operation
+Step 1 – Create New Angular App<br>
+Step 2 – Create Components in Angular<br>
+Step 3 – Import Modules in app.module.ts<br>
+Step 4 – Create CRUD Routes<br>
+Step 5 – Build RESTful API using Node + Express js + MongoDB<br>
+Step 6 – Create Angular Service for REST API Consumption<br>
+Step 7 – Add code In app.component.html<br>
+Step 8 – Create Operation<br>
 
 ## Step 1 – Create New Angular App
 First of all, open your terminal and execute the following command on it to install angular app:
@@ -22,13 +22,13 @@ Then execute the following command on terminal to install angular material:
 
 ## Step 2 – Create Components in Angular
 In this step, you need to execute the following commands on terminal to generate components in our angular application. So, open y cour terminal and execute the following command:
-ng g c components/add-book
-ng g c components/book-detail
-ng g c components/books-list
+`ng g c components/add-book`
+`ng g c components/book-detail`
+`ng g c components/books-list`
 
 # Step 3 – Import Modules in app.module.ts
 In this step, visit src/app directory and open app.module.ts file. Then add the following code into it:
-....
+`....
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
  
@@ -44,11 +44,11 @@ import { HttpClientModule } from '@angular/common/http';
 })
  
 export class AppModule { }
-....
+....`
 
 ## Step 4 – Create CRUD Routes
 In this step, create routes; with the help of Angular routes. So, you will make the consensus with components to enable the navigation in the CRUD application so add the below code in the app-routing.module.ts file.
-....
+`....
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
  
@@ -69,7 +69,7 @@ const routes: Routes = [
 })
  
 export class AppRoutingModule { }
-....
+....`
 
  
 ## Step 5 – Build RESTful API using Node + Express js + MongoDB
