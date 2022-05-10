@@ -456,7 +456,8 @@ export class AddBookComponent implements OnInit {
     });
   }
  
-} ```
+} 
+```
 
 <br>
 <br>
@@ -464,8 +465,7 @@ export class AddBookComponent implements OnInit {
 Then, Add the code in add-book.component.html file:
 <br>
 
-
-```html
+``` html
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
         <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
