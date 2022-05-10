@@ -123,7 +123,9 @@ module.exports = mongoose.model('Book', Book)
 ```
 
 Then, You need to define the REST API routes using Express js in a node project. Create node-backend/routes folder, also create book.routes.js file, Add the below code into it:
-
+<br>
+<br>
+<br>
 ```javascript
 const express = require('express');
 const app = express();
@@ -193,19 +195,20 @@ bookRoute.route('/delete-book/:id').delete((req, res, next) => {
   })
 })
  
-module.exports = bookRoute;
-```
+module.exports = bookRoute;```
+
 <br>
 Now, you need to sum up all the code and conjugate at one place so that you can run our backend and propel the CRUD app development forward.
 Create and add the below code in index.js file:<br>
+<br>
 
 ```javascript
-  let express = require('express'),
-  path = require('path'),
-  mongoose = require('mongoose'),
-  cors = require('cors'),
-  bodyParser = require('body-parser'),
-  mongoDb = require('./database/db');
+let express = require('express'),
+path = require('path'),
+mongoose = require('mongoose'),
+cors = require('cors'),
+bodyParser = require('body-parser'),
+mongoDb = require('./database/db');
  
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDb.db, {
@@ -227,6 +230,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
 app.use(cors());
  
 // Static directory path
@@ -264,11 +268,12 @@ app.use(function (err, req, res, next) {
   res.status(err.statusCode).send(err.message);
 });
 ```
+
 <br>
 <br>
 <br>
 Next, execute the command while staying in the server folder (node-backend):<br>
-`nodemon`
+` nodemon `
 
 Here is your bash URL for REST API built with Node and Express http://localhost:8000/api<br>
 The endpoints we created and you can use these to handle the CRUD operations with Angular application:<br>
@@ -293,11 +298,12 @@ export class Book {
 ```
 
 Then, execute the command to create crud service file:<br>
-`ng g s service/crud`
+` ng g s service/crud `
 
 <br>
 Then, add the below code in app/service/crud.service.ts file:
 <br>
+
 ```typescript
 import { Injectable } from '@angular/core';
 import { Book } from './Book';
