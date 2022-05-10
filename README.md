@@ -1,9 +1,9 @@
 
-**                                              **Angular 13 + MongoDB Example with Node.js Express ****
+#**                                              **Angular 13 + MongoDB Example with Node.js Express ****
 
 Angular 13 node js mongodb crud example. In this tutorial, we will learn how to create ( MEAN Stack) crud apps using angular 13 + node js express rest API and MongoDB.
 
-Use the following steps to create angular 13 + node js mongodb crud application; as follows:
+##Use the following steps to create angular 13 + node js mongodb crud application; as follows:
 Step 1 – Create New Angular App
 Step 2 – Create Components in Angular
 Step 3 – Import Modules in app.module.ts
@@ -13,14 +13,14 @@ Step 6 – Create Angular Service for REST API Consumption
 Step 7 – Add code In app.component.html
 Step 8 – Create Operation
 
-Step 1 – Create New Angular App
+##Step 1 – Create New Angular App
 First of all, open your terminal and execute the following command on it to install angular app:
-ng new my-new-app
+'ng new my-new-app'
 
 Then execute the following command on terminal to install angular material:
-ng add @angular/material
+`ng add @angular/material`
 
-Step 2 – Create Components in Angular
+##Step 2 – Create Components in Angular
 In this step, you need to execute the following commands on terminal to generate components in our angular application. So, open y cour terminal and execute the following command:
 ng g c components/add-book
 ng g c components/book-detail
