@@ -48,7 +48,8 @@ export class AppModule { }<br>
 
 ## Step 4 – Create CRUD Routes
 In this step, create routes; with the help of Angular routes. So, you will make the consensus with components to enable the navigation in the CRUD application so add the below code in the app-routing.module.ts file.<br>
-`....
+
+```typescript
 import { NgModule } from '@angular/core';<br>
 import { Routes, RouterModule } from '@angular/router';
  <br>
@@ -69,7 +70,7 @@ const routes: Routes = [
 })
  <br>
 export class AppRoutingModule { }<br>
-....`
+```
 
  
 ## Step 5 – Build RESTful API using Node + Express js + MongoDB
@@ -81,22 +82,24 @@ So, execute the below command to invoke the REST API development with Node and E
 Then execute:
 `npm init -y`
 <br>
+
 After that, execute the following commands to install imperative npm packages which will help us to create REST APIs for our Angular CRUD system:
-npm install express cors body-parser mongoose
-npm install nodemon --save-dev
+`npm install express cors body-parser mongoose`
+`npm install nodemon --save-dev`
 
 To store the data flawlessly, you need a reliable database of what else could be a better choice than mongoDB. So, create a node-backend/database directory, also generate the db.js file where all the logic will be piled up for invoking the mongoDB connection.
-mkdir database && cd database && copy con db.js
+`mkdir database && cd database && copy con db.js`
 
 Add the below code in node-backend/database/db.js file.
-....
+```typescript
 module.exports = {
     db: 'mongodb://localhost:27017/db'
 };
-....
+```
 
 Now, you need to create the Book model or schema, create node-backend/model folder. Also create a Book.js file and add the below code into it:
-....
+
+```javascript
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
  
@@ -115,10 +118,11 @@ let Book = new Schema({
 })
  
 module.exports = mongoose.model('Book', Book)
-....
+```
 
 Then, You need to define the REST API routes using Express js in a node project. Create node-backend/routes folder, also create book.routes.js file, Add the below code into it:
-....
+
+```typescript
 const express = require('express');
 const app = express();
  
@@ -188,11 +192,12 @@ bookRoute.route('/delete-book/:id').delete((req, res, next) => {
 })
  
 module.exports = bookRoute;
-....
+```
 
 Now, you need to sum up all the code and conjugate at one place so that you can run our backend and propel the CRUD app development forward.
 Create and add the below code in index.js file:
-....
+
+```typescript
   let express = require('express'),
   path = require('path'),
   mongoose = require('mongoose'),
@@ -256,7 +261,7 @@ app.use(function (err, req, res, next) {
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
 });
-....
+```
 
 
 Next, execute the command while staying in the server folder (node-backend):
@@ -274,20 +279,22 @@ DELETE		/delete-book/id
 ## Step 6 – Create Angular Service for REST API Consumption
 In this step, visit app/service directory in Angular project and create Book.ts class within.
 Then, add the below code in app/service/Book.ts file:
-....
+
+```typescript
 export class Book {
     _id!: String;
     name!: String;
     price!: String;
     description!: String;
 }
-
+```
 
 Then, execute the command to create crud service file:
-ng g s service/crud
+`ng g s service/crud`
 
 Then, add the below code in app/service/crud.service.ts file:
-....
+
+```typescript
 import { Injectable } from '@angular/core';
 import { Book } from './Book';
 import { catchError, map } from 'rxjs/operators';
@@ -366,11 +373,13 @@ export class CrudService {
   }
  
 }
-....
+```
+
     
 ## Step 7 – Add code In app.component.html
 In this step, create html and for crud app in angular . So, visit src/app/app.component.html and update the following code into it:
-....
+
+```html
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand">Angular 13 CRUD Operations Demo</a>
  
@@ -387,12 +396,13 @@ In this step, create html and for crud app in angular . So, visit src/app/app.co
 </nav>
  
 <router-outlet></router-outlet>
-....
+```
     
 ## Step 8 – Create Operation
 After that, Add the code in add-book.component.ts file:
-....
-    import { Component, OnInit, NgZone } from '@angular/core';
+
+```typescript
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from './../../service/crud.service';
 import { FormGroup, FormBuilder } from "@angular/forms";
@@ -433,11 +443,12 @@ export class AddBookComponent implements OnInit {
   }
  
 }
-....
+```
 
     
 Then, Add the code in add-book.component.html file:
 
+```typescript
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
         <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
@@ -462,10 +473,11 @@ Then, Add the code in add-book.component.html file:
         </form>
     </div>
   </div>
-....
+```
     
 Add the code in books-list.component.ts file:
-....
+
+```typescript
 import { Component, OnInit } from '@angular/core';
 import { CrudService } from './../../service/crud.service';
  
@@ -497,10 +509,11 @@ export class BooksListComponent implements OnInit {
     }
   } 
 }
-....
+```
     
 Add the code in books-list.component.html file:
-....
+
+```html
  <div class="container">
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h2 class="h2">Books List</h2>
@@ -531,10 +544,11 @@ Add the code in books-list.component.html file:
     </table>
   </div>
 </div>
-....
+```
     
 Add the code in book-detail.component.ts file:
-....
+
+```typescript
 import { Component, OnInit, NgZone } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CrudService } from './../../service/crud.service';
@@ -588,10 +602,12 @@ export class BookDetailComponent implements OnInit {
   }
  
 }
-....
+```
+
     
  Add the code in book-detail.component.html file:
-....
+ 
+```typescript
   <div class="row justify-content-center mt-5">
   <div class="col-md-4">
     <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
@@ -616,7 +632,7 @@ export class BookDetailComponent implements OnInit {
     </form>
   </div>
 </div>
-....    
+```
     
 ## Conclusion
 Angular 13 CRUD application using Node.js, Express.js, and MongoDB. In this tutorial, we have learned how to create crud app in angular 13 using nodejs and mongo db with built REST API.
