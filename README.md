@@ -366,8 +366,7 @@ export class CrudService {
         catchError(this.handleError)
       )
   }
- 
- 
+  
   // Error 
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';
@@ -382,16 +381,17 @@ export class CrudService {
     return throwError(errorMessage);
   }
  
-}
-```
+} ```
+
 <br>
 <br>
 
 ## Step 7 – Add code In app.component.html
 In this step, create html and for crud app in angular . So, visit src/app/app.component.html and update the following code into it:<br>
 <br>
-```html
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+``` html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand">Angular 13 CRUD Operations Demo</a>
  
   <div id="navbarNav" class="collapse navbar-collapse">
@@ -404,6 +404,7 @@ In this step, create html and for crud app in angular . So, visit src/app/app.co
       </li>
     </ul>
   </div>
+
 </nav>
  
 <router-outlet></router-outlet>
@@ -454,13 +455,15 @@ export class AddBookComponent implements OnInit {
     });
   }
  
-}
-```
+} ```
+
 <br>
 <br>
 <br>
 Then, Add the code in add-book.component.html file:
 <br>
+
+
 ```html
   <div class="row justify-content-center mt-5">
     <div class="col-md-4">
@@ -628,7 +631,7 @@ export class BookDetailComponent implements OnInit {
  Add the code in book-detail.component.html file:<br>
  <br>
 ```html
-  <div class="row justify-content-center mt-5">
+<div class="row justify-content-center mt-5">
   <div class="col-md-4">
     <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
       <div class="form-group">
